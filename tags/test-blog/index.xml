@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Posts on Campus Coder</title>
-    <link>https://campus-coder.github.io/posts/</link>
-    <description>Recent content in Posts on Campus Coder</description>
+    <title>test-blog on Campus Coder</title>
+    <link>https://campus-coder.github.io/tags/test-blog/</link>
+    <description>Recent content in test-blog on Campus Coder</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>© Copyright Campus Coder</copyright>
-    <lastBuildDate>Thu, 04 Feb 2021 17:12:50 +1030</lastBuildDate><atom:link href="https://campus-coder.github.io/posts/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Thu, 04 Feb 2021 17:12:50 +1030</lastBuildDate><atom:link href="https://campus-coder.github.io/tags/test-blog/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Test</title>
       <link>https://campus-coder.github.io/posts/test/</link>
