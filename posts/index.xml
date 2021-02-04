@@ -7,7 +7,16 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>© Copyright Campus Coder</copyright>
-    <lastBuildDate>Mon, 11 Mar 2019 00:00:00 +0000</lastBuildDate><atom:link href="https://campus-coder.github.io/posts/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Thu, 04 Feb 2021 17:12:50 +1030</lastBuildDate><atom:link href="https://campus-coder.github.io/posts/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Test</title>
+      <link>https://campus-coder.github.io/posts/test/</link>
+      <pubDate>Thu, 04 Feb 2021 17:12:50 +1030</pubDate>
+      
+      <guid>https://campus-coder.github.io/posts/test/</guid>
+      <description></description>
+    </item>
+    
     <item>
       <title>Markdown Syntax Guide</title>
       <link>https://campus-coder.github.io/posts/post-8/</link>
