@@ -7,11 +7,11 @@
 <meta itemprop="description" content="In this blog, I bring forward one individual guide to make flutter web URLs to behave more like the traditional web and making them compatible for callback scenarios (mostly for SSO or OAuth requirements).">
 <meta itemprop="datePublished" content="2021-02-05T18:24:48+10:30" />
 <meta itemprop="dateModified" content="2021-02-05T18:24:48+10:30" />
-<meta itemprop="wordCount" content="155">
+<meta itemprop="wordCount" content="335">
 
 
 
-<meta itemprop="keywords" content="Bharath Nair,flutter,flutter-web,callback,url,OAuth,SSO," />
+<meta itemprop="keywords" content="Bharath Nair,flutter,flutter-web,callback,URL,OAuth,SSO," />
 <meta property="og:title" content="Flutter Web - the URL problem fixed!" />
 <meta property="og:description" content="In this blog, I bring forward one individual guide to make flutter web URLs to behave more like the traditional web and making them compatible for callback scenarios (mostly for SSO or OAuth requirements)." />
 <meta property="og:type" content="article" />
@@ -96,7 +96,45 @@
 <li><code>Flutter (Channel master, 1.26.0-18.0.pre.49, on macOS 11.2 20D64 darwin-x64, locale en-GB)</code></li>
 </ul>
 <p>Although you should be fine for the most part, if you encounter any issues its a good idea to try changing your flutter channel to master. (<a href="https://flutter.dev/docs/development/tools/sdk/upgrading#switching-flutter-channels">Switching Flutter channels</a>)</p>
-<blockquote>
+<h3 id="now-to-the-important-bit">Now to the important bit</h3>
+<p>In your <code>pubspec.yaml</code> file, add the following under <code>dependencies</code> as follows:</p>
+<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-fallback" data-lang="fallback">dependencies:
+  flutter:
+    sdk: flutter
+  fluro: ^1.7.8
+  flutter_web_plugins:
+    sdk: flutter
+</code></pre></div><h4 id="removing-the--from-the-url">Removing the &lsquo;#&rsquo; from the URL</h4>
+<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-fallback" data-lang="fallback">http://localhost:51214/#/
+</code></pre></div><p>Why do we have that &lsquo;#&rsquo; ?</p>
+<!-- raw HTML omitted -->
+<p>I seriously don&rsquo;t know the reason, never found an advantage for having it.</p>
+<p>The problem of having the &lsquo;#&rsquo; - Flutter puts it before the &lsquo;?&rsquo; of the query string which basically makes the query string invalid and ruins the whole point of a callback.</p>
+<ul>
+<li>Create a file named <code>configure_nonweb.dart</code> and add the following code to it:</li>
+</ul>
+<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-fallback" data-lang="fallback">void configureApp() {
+  // No-op.
+}
+</code></pre></div><ul>
+<li>Then, create a file named <code>configure_web.dart</code> and add the following code to it:</li>
+</ul>
+<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-fallback" data-lang="fallback">import &#39;package:flutter_web_plugins/flutter_web_plugins.dart&#39;;
+
+void configureApp() {
+  setUrlStrategy(PathUrlStrategy());
+}
+</code></pre></div><ul>
+<li>Then, go to your <code>main.dart</code> file and add the following import:</li>
+</ul>
+<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-fallback" data-lang="fallback">import &#39;configure_nonweb.dart&#39; if (dart.library.html) &#39;configure_web.dart&#39;;
+</code></pre></div><ul>
+<li>Now, in your <code>void main()</code> function, add the following before your <code>runApp</code>:</li>
+</ul>
+<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-fallback" data-lang="fallback">configureApp();
+</code></pre></div><p>This should remove the &lsquo;#&rsquo; from your URL. If you encounter any issues, make sure to check your <code>web/index.html</code> file for this line in it&rsquo;s <code>&lt;head&gt;</code> section.</p>
+<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-fallback" data-lang="fallback">&lt;base href=&#34;/&#34;&gt;
+</code></pre></div><blockquote>
 <p>Remaining coming soon!</p>
 </blockquote>
 
@@ -115,7 +153,7 @@
 							
 							<li><a href="/tags/callback">callback</a></li>
 							
-							<li><a href="/tags/url">url</a></li>
+							<li><a href="/tags/url">URL</a></li>
 							
 							<li><a href="/tags/oauth">OAuth</a></li>
 							
