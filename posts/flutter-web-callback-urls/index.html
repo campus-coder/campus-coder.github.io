@@ -7,7 +7,7 @@
 <meta itemprop="description" content="In this blog, I bring forward one individual guide to make flutter web URLs to behave more like the traditional web and making them compatible for callback scenarios (mostly for SSO or OAuth requirements).">
 <meta itemprop="datePublished" content="2021-02-05T18:24:48+10:30" />
 <meta itemprop="dateModified" content="2021-02-05T18:24:48+10:30" />
-<meta itemprop="wordCount" content="80">
+<meta itemprop="wordCount" content="155">
 
 
 
@@ -90,6 +90,12 @@
 				<h2 id="the-problem">The Problem</h2>
 <p>I love that there is an option to write code for the web without having to use CSS (the one thing I hate about web dev). Thanks to flutter, CSS is a thing of the past. With such convinence, you want to be able to build any sort of website using it. By default, flutter web has no capability for working will callbacks. This limits you from working with OAuth services or SSO systems.</p>
 <h2 id="solution">Solution!</h2>
+<p>This solution is a combination of a blog by <a href="https://www.filledstacks.com/snippet/navigate-like-your-on-the-web-with-flutter-and-fluro/">Dane Mackier</a> and an issue reported on flutter&rsquo;s github <a href="https://github.com/flutter/flutter/issues/33245">repository</a> along with incompatibility fixes with current versions of the packages used.</p>
+<p>Firstly, getting our <code>versions</code> straight</p>
+<ul>
+<li><code>Flutter (Channel master, 1.26.0-18.0.pre.49, on macOS 11.2 20D64 darwin-x64, locale en-GB)</code></li>
+</ul>
+<p>Although you should be fine for the most part, if you encounter any issues its a good idea to try changing your flutter channel to master. (<a href="https://flutter.dev/docs/development/tools/sdk/upgrading#switching-flutter-channels">Switching Flutter channels</a>)</p>
 <blockquote>
 <p>Remaining coming soon!</p>
 </blockquote>
@@ -147,7 +153,7 @@
 var doNotTrack = false;
 if (!doNotTrack) {
 	window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
-	ga('create', 'UA-123-45', 'auto');
+	ga('create', 'G-LEB9JRZ5DK', 'auto');
 	
 	ga('send', 'pageview');
 }
