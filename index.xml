@@ -7,7 +7,16 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>© Copyright Campus Coder</copyright>
-    <lastBuildDate>Thu, 04 Feb 2021 17:12:50 +1030</lastBuildDate><atom:link href="https://campus-coder.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Fri, 05 Feb 2021 18:24:48 +1030</lastBuildDate><atom:link href="https://campus-coder.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Flutter Web - the URL problem fixed!</title>
+      <link>https://campus-coder.github.io/posts/flutter-web-callback-urls/</link>
+      <pubDate>Fri, 05 Feb 2021 18:24:48 +1030</pubDate>
+      
+      <guid>https://campus-coder.github.io/posts/flutter-web-callback-urls/</guid>
+      <description>The Problem I love that there is an option to write code for the web without having to use CSS (the one thing I hate about web dev). Thanks to flutter, CSS is a thing of the past. With such convinence, you want to be able to build any sort of website using it. By default, flutter web has no capability for working will callbacks. This limits you from working with OAuth services or SSO systems.</description>
+    </item>
+    
     <item>
       <title>About</title>
       <link>https://campus-coder.github.io/about/</link>
@@ -16,16 +25,6 @@
       <guid>https://campus-coder.github.io/about/</guid>
       <description>Campus Coder is small group of students based of The University of Adelaide, South Australia. We are passionate about Computer Science, Software development and anything cool that emerges in this field :)
 Do check out out Github Page!</description>
-    </item>
-    
-    <item>
-      <title>Test</title>
-      <link>https://campus-coder.github.io/posts/test/</link>
-      <pubDate>Thu, 04 Feb 2021 17:12:50 +1030</pubDate>
-      
-      <guid>https://campus-coder.github.io/posts/test/</guid>
-      <description>Test blog.
-Test blog. Test blog. Test blog. Test blog. Test blog. Test blog. Test blog. Test blog. Test blog. Test blog.</description>
     </item>
     
   </channel>
