@@ -7,7 +7,7 @@
 <meta itemprop="description" content="In this blog, I bring forward one individual guide to make flutter web URLs to behave more like the traditional web and making them compatible for callback scenarios (mostly for SSO or OAuth requirements).">
 <meta itemprop="datePublished" content="2021-02-05T18:24:48+10:30" />
 <meta itemprop="dateModified" content="2021-02-05T18:24:48+10:30" />
-<meta itemprop="wordCount" content="335">
+<meta itemprop="wordCount" content="557">
 
 
 
@@ -125,16 +125,76 @@ void configureApp() {
   setUrlStrategy(PathUrlStrategy());
 }
 </code></pre></div><ul>
-<li>Then, go to your <code>main.dart</code> file and add the following import:</li>
+<li>Then, go to your <code>main.dart</code> file and add the following imports:</li>
 </ul>
 <div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-fallback" data-lang="fallback">import &#39;configure_nonweb.dart&#39; if (dart.library.html) &#39;configure_web.dart&#39;;
+import &#39;fluro_router.dart&#39;;
 </code></pre></div><ul>
 <li>Now, in your <code>void main()</code> function, add the following before your <code>runApp</code>:</li>
 </ul>
 <div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-fallback" data-lang="fallback">configureApp();
 </code></pre></div><p>This should remove the &lsquo;#&rsquo; from your URL. If you encounter any issues, make sure to check your <code>web/index.html</code> file for this line in it&rsquo;s <code>&lt;head&gt;</code> section.</p>
 <div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-fallback" data-lang="fallback">&lt;base href=&#34;/&#34;&gt;
-</code></pre></div><blockquote>
+</code></pre></div><h4 id="fluro---the-routing-library">Fluro - The Routing library</h4>
+<p>Create a file named <code>fluro_router.dart</code> and add the following code to it:</p>
+<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-fallback" data-lang="fallback">import &#39;package:fluro/fluro.dart&#39;;
+import &#39;package:flutter/material.dart&#39;;
+import &#39;package:flutter_web_urls_fixed/main.dart&#39;;
+
+class FRouter {
+  static final router = FluroRouter();
+
+  static Handler _homeHandler =
+      Handler(handlerFunc: (BuildContext context, Map&lt;String, dynamic&gt; params) {
+    var code = params[&#39;code&#39;]?.first;
+    var state = params[&#39;state&#39;]?.first;
+    print(code);
+    print(state);
+    return MyHomePage(
+      title: &#34;Hello World&#34;,
+    );
+  });
+  static void setupRouter() {
+    router.define(&#34;home&#34;, handler: _homeHandler);
+  }
+}
+</code></pre></div><ul>
+<li>Then, in the <code>main.dart</code> file, add the following in the <code>void main()</code> function:</li>
+</ul>
+<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-fallback" data-lang="fallback">FRouter.setupRouter();
+</code></pre></div><ul>
+<li>Then, add the following to the <code>MaterialApp</code> declaration in the root of the application:</li>
+</ul>
+<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-fallback" data-lang="fallback">return MaterialApp(
+    title: &#39;Flutter Demo&#39;,
+    ...
+    initialRoute: &#39;home&#39;,
+    onGenerateRoute: FRouter.router.generator,
+    ...
+    theme: ThemeData(
+</code></pre></div><p>Now the page will default to load at <code>/home</code>.</p>
+<p>Try going to <code>/home?code=12343&amp;state=abcd</code> and check the console to see the magic!</p>
+<p>For every new route you want to add, do the following:</p>
+<ul>
+<li>Go to <code>fluro_router.dart</code>, add a new handler in the <code>FRouter()</code> class,</li>
+</ul>
+<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-fallback" data-lang="fallback">static Handler _homeHandler =
+      Handler(handlerFunc: (BuildContext context, Map&lt;String, dynamic&gt; params) {
+    // The params map will have the query parameters
+
+    return MyHomePage(
+      title: &#34;Hello World&#34;,
+    );
+  });
+</code></pre></div><p>Here, <code>MyHomePage</code> is the page you want to go for that route.</p>
+<ul>
+<li>Then, add a new route in the <code>setupRouter()</code> function,</li>
+</ul>
+<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-fallback" data-lang="fallback">router.define(&#34;home&#34;, handler: _homeHandler);
+</code></pre></div><p>Here, <code>home</code> is the route <code>/home</code> and <code>_homeHandler</code> is the handler you created earlier.</p>
+<h3 id="and-thats-it">And that&rsquo;s it!</h3>
+<!-- raw HTML omitted -->
+<blockquote>
 <p>Remaining coming soon!</p>
 </blockquote>
 
