@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Python on Campus Coder</title>
+    <link>https://campus-coder.github.io/tags/python/</link>
+    <description>Recent content in Python on Campus Coder</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <copyright>© Copyright Campus Coder</copyright>
+    <lastBuildDate>Tue, 30 Mar 2021 19:00:02 +1030</lastBuildDate><atom:link href="https://campus-coder.github.io/tags/python/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Automated Gradescope Submissions</title>
+      <link>https://campus-coder.github.io/posts/automated-gradescope-submissions/</link>
+      <pubDate>Tue, 30 Mar 2021 19:00:02 +1030</pubDate>
+      
+      <guid>https://campus-coder.github.io/posts/automated-gradescope-submissions/</guid>
+      <description>The Problem The upgrade from our university&amp;rsquo;s websub system to gradescope looks and feels great for sure, but the approach of having to upload your files each time or maintaining a separate GitHub repo for each assignment is a pain. The whole process gets even worse when you have to deal with folders within your assignment.
+Solution! We have developed a tiny python script that will upload all the files in the folder placed in as a submission to gradescope.</description>
+    </item>
+    
+  </channel>
+</rss>
