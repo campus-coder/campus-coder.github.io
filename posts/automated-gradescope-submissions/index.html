@@ -7,7 +7,7 @@
 <meta itemprop="description" content="In this blog, I will be demonstrating how to setup and use the automated submission script we made for gradescope">
 <meta itemprop="datePublished" content="2021-03-30T19:00:02+10:30" />
 <meta itemprop="dateModified" content="2021-03-30T19:00:02+10:30" />
-<meta itemprop="wordCount" content="106">
+<meta itemprop="wordCount" content="212">
 
 
 
@@ -90,7 +90,7 @@
 				<h2 id="the-problem">The Problem</h2>
 <p>The upgrade from our university&rsquo;s websub system to gradescope looks and feels great for sure, but the approach of having to upload your files each time or maintaining a separate GitHub repo for each assignment is a pain. The whole process gets even worse when you have to deal with folders within your assignment.</p>
 <h2 id="solution">Solution!</h2>
-<p>We have developed a tiny python script that will upload all the files in the folder placed in as a submission to gradescope.</p>
+<p>We have developed a tiny python script that will upload all the files in the folder it&rsquo;s placed in as a submission to gradescope.</p>
 <h3 id="demo">Demo</h3>
 
 <div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;">
@@ -98,6 +98,31 @@
 </div>
 
 <p>P.S After 0:21, please extend to the end, gradescope just takes too long to finish grading and I was too lazy to trim the video.</p>
+<h3 id="setting-up-the-submission-script">Setting up the submission script</h3>
+<ul>
+<li>Step 1: Download the <code>submit.py</code> file from <a href="%22https://github.com/campus-coder/gradescope-submit%22">this</a> Github repository.</li>
+<li>Step 2: Copy the <code>submit.py</code> file to your assignment directory.</li>
+<li>Step 3: Install <code>requests_toolbelt</code>,</li>
+</ul>
+<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-fallback" data-lang="fallback">pip3 install requests_toolbelt
+</code></pre></div><ul>
+<li>Step 4: Open the file and edit the following as per the setup video embedded below:</li>
+</ul>
+<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-fallback" data-lang="fallback">assignment_url = &#34;&#34;
+authenticity_token = &#34;&#34;
+cookie = &#34;&#34;
+</code></pre></div>
+<div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;">
+  <iframe src="https://www.youtube.com/embed/HcMmpCxALKc" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border:0;" allowfullscreen title="YouTube Video"></iframe>
+</div>
+
+<h2 id="after-this-process-you-can-simply-run-the-following-command-to-make-a-submission-to-gradescope-no-zip-files-no-folders-no-confusion">After this process, you can simply run the following command to make a submission to gradescope. No zip files, No folders, No confusion!</h2>
+<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-fallback" data-lang="fallback">python3 submit.py
+</code></pre></div><h2 id="note-you-will-need-to-repeat-steps-24-for-every-individual-assignmentpractical">Note: You will need to repeat steps 2&amp;4 for every individual assignment/practical.</h2>
+<!-- raw HTML omitted -->
+<blockquote>
+<h2 id="feel-free-to-use-the-discussion-forum-below-for-any-queries">Feel free to use the discussion forum below for any queries!</h2>
+</blockquote>
 
 			</div>
 
