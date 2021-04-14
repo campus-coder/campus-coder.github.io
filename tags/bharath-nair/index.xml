@@ -1,19 +1,19 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Bharath Nair on Campus Coder</title>
-    <link>https://campus-coder.github.io/tags/bharath-nair/</link>
-    <description>Recent content in Bharath Nair on Campus Coder</description>
+    <title>Bharath Nair on SyncFire</title>
+    <link>https://syncfire.github.io/tags/bharath-nair/</link>
+    <description>Recent content in Bharath Nair on SyncFire</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>© Copyright Campus Coder</copyright>
-    <lastBuildDate>Fri, 05 Feb 2021 18:24:48 +1030</lastBuildDate><atom:link href="https://campus-coder.github.io/tags/bharath-nair/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Fri, 05 Feb 2021 18:24:48 +1030</lastBuildDate><atom:link href="https://syncfire.github.io/tags/bharath-nair/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Flutter Web - the URL problem fixed!</title>
-      <link>https://campus-coder.github.io/posts/flutter-web-callback-urls/</link>
+      <link>https://syncfire.github.io/posts/flutter-web-callback-urls/</link>
       <pubDate>Fri, 05 Feb 2021 18:24:48 +1030</pubDate>
       
-      <guid>https://campus-coder.github.io/posts/flutter-web-callback-urls/</guid>
+      <guid>https://syncfire.github.io/posts/flutter-web-callback-urls/</guid>
       <description>The Problem I love that there is an option to write code for the web without having to use CSS (the one thing I hate about web dev). Thanks to flutter, CSS is a thing of the past. With such convinence, you want to be able to build any sort of website using it. By default, flutter web has no capability for working will callbacks. This limits you from working with OAuth services or SSO systems.</description>
     </item>
     

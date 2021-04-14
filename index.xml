@@ -1,38 +1,38 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Campus Coder</title>
-    <link>https://campus-coder.github.io/</link>
-    <description>Recent content on Campus Coder</description>
+    <title>SyncFire</title>
+    <link>https://syncfire.github.io/</link>
+    <description>Recent content on SyncFire</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>© Copyright Campus Coder</copyright>
-    <lastBuildDate>Tue, 30 Mar 2021 19:00:02 +1030</lastBuildDate><atom:link href="https://campus-coder.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Tue, 30 Mar 2021 19:00:02 +1030</lastBuildDate><atom:link href="https://syncfire.github.io/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Automated Gradescope Submissions</title>
-      <link>https://campus-coder.github.io/posts/automated-gradescope-submissions/</link>
+      <link>https://syncfire.github.io/posts/automated-gradescope-submissions/</link>
       <pubDate>Tue, 30 Mar 2021 19:00:02 +1030</pubDate>
       
-      <guid>https://campus-coder.github.io/posts/automated-gradescope-submissions/</guid>
+      <guid>https://syncfire.github.io/posts/automated-gradescope-submissions/</guid>
       <description>The Problem The upgrade from our university&amp;rsquo;s websub system to gradescope looks and feels great for sure, but the approach of having to upload your files each time or maintaining a separate GitHub repo for each assignment is a pain. The whole process gets even worse when you have to deal with folders within your assignment.
 TL;DR   Solution! We have developed a tiny python script that will upload all the files in the folder it&amp;rsquo;s placed in as a submission to gradescope.</description>
     </item>
     
     <item>
       <title>Flutter Web - the URL problem fixed!</title>
-      <link>https://campus-coder.github.io/posts/flutter-web-callback-urls/</link>
+      <link>https://syncfire.github.io/posts/flutter-web-callback-urls/</link>
       <pubDate>Fri, 05 Feb 2021 18:24:48 +1030</pubDate>
       
-      <guid>https://campus-coder.github.io/posts/flutter-web-callback-urls/</guid>
+      <guid>https://syncfire.github.io/posts/flutter-web-callback-urls/</guid>
       <description>The Problem I love that there is an option to write code for the web without having to use CSS (the one thing I hate about web dev). Thanks to flutter, CSS is a thing of the past. With such convinence, you want to be able to build any sort of website using it. By default, flutter web has no capability for working will callbacks. This limits you from working with OAuth services or SSO systems.</description>
     </item>
     
     <item>
       <title>About</title>
-      <link>https://campus-coder.github.io/about/</link>
+      <link>https://syncfire.github.io/about/</link>
       <pubDate>Thu, 04 Feb 2021 17:12:50 +1030</pubDate>
       
-      <guid>https://campus-coder.github.io/about/</guid>
+      <guid>https://syncfire.github.io/about/</guid>
       <description>Campus Coder is small group of students based of The University of Adelaide, South Australia. We are passionate about Computer Science, Software development and anything cool that emerges in this field :)
 Do check out out Github Page!</description>
     </item>
